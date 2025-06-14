@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore cutting-edge quantum research: quantum computing, entanglement, supremacy, and photonic networks. Learn how quantum technologies are shaping the future."
+    />
+    <meta
+      name="keywords"
+      content="Quantum Computing, Quantum Research, Quantum Entanglement, Quantum Supremacy, Quantum Technology, Photonic Quantum Networks, Quantum Mechanics"
+    />
+    <title>Quantum Research | Future Technologies</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Segoe+UI:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 100%);
+        color: #e0e0e0;
+        min-height: 100vh;
+      }
+      header {
+        background: linear-gradient(90deg, #222 60%, #00ffcc 100%);
+        padding: 2.5rem 1rem 2rem 1rem;
+        text-align: center;
+        border-bottom: 2px solid #00ffcc;
+        box-shadow: 0 4px 24px 0 #00ffcc22;
+      }
+      header h1 {
+        font-size: 2.8rem;
+        color: #00ffcc;
+        margin: 0;
+        letter-spacing: 2px;
+        font-weight: 700;
+        text-shadow: 0 2px 12px #00ffcc44;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      nav a {
+        color: #00ccff;
+        text-decoration: none;
+        margin: 0 1.2rem;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+      }
+      nav a:hover {
+        color: #ffcc00;
+      }
+      main {
+        padding: 2.5rem 1rem 1rem 1rem;
+        max-width: 900px;
+        margin: auto;
+      }
+      section {
+        margin-bottom: 2.5rem;
+        background: #181828cc;
+        border-radius: 1.2rem;
+        box-shadow: 0 2px 16px 0 #00ffcc22;
+        padding: 2rem 2rem 1.5rem 2rem;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.6s cubic-bezier(0.4, 2, 0.3, 1);
+      }
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      h2 {
+        color: #00ccff;
+        margin-top: 0;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      p {
+        line-height: 1.7;
+        font-size: 1.1rem;
+      }
+      .highlight {
+        color: #ffcc00;
+        font-weight: 600;
+      }
+      footer {
+        text-align: center;
+        padding: 1.2rem 0;
+        background: #111;
+        color: #888;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-top: 2rem;
+        border-top: 1px solid #222;
+      }
+      /* AI Assistant Section */
+      #ai-query {
+        background: linear-gradient(90deg, #181828 60%, #00ccff22 100%);
+        border: 1.5px solid #00ccff55;
+        box-shadow: 0 2px 16px 0 #00ccff22;
+        border-radius: 1.2rem;
+        padding: 2rem 2rem 1.5rem 2rem;
+        margin-bottom: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #ai-query h2 {
+        color: #ffcc00;
+        margin-bottom: 1.2rem;
+      }
+      #promptInput {
+        width: 90%;
+        max-width: 500px;
+        padding: 0.8rem 1rem;
+        border-radius: 0.7rem;
+        border: 1.5px solid #00ccff88;
+        background: #23233a;
+        color: #fff;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        outline: none;
+        transition: border 0.2s;
+      }
+      #promptInput:focus {
+        border: 1.5px solid #ffcc00;
+      }
+      #ai-query button {
+        padding: 0.8rem 2.2rem;
+        border-radius: 0.7rem;
+        border: none;
+        background: linear-gradient(90deg, #00ccff 60%, #ffcc00 100%);
+        color: #181828;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 2px 8px 0 #00ccff33;
+        transition: background 0.2s, color 0.2s;
+      }
+      #ai-query button:hover {
+        background: linear-gradient(90deg, #ffcc00 60%, #00ccff 100%);
+        color: #181828;
+      }
+      #aiResponse {
+        margin-top: 1.2rem;
+        color: #e0e0e0;
+        background: #23233a;
+        border-radius: 0.7rem;
+        padding: 1rem 1.2rem;
+        min-height: 2.2rem;
+        width: 90%;
+        max-width: 500px;
+        font-size: 1.08rem;
+        box-shadow: 0 1px 8px 0 #00ccff22;
+        word-break: break-word;
+      }
+      @media (max-width: 700px) {
+        main {
+          padding: 1.2rem 0.5rem;
+        }
+        section,
+        #ai-query {
+          padding: 1.2rem 0.7rem 1rem 0.7rem;
+        }
+        #promptInput,
+        #aiResponse {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+
+      .entry {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        transition: transform 0.2s;
+      }
+
+      .entry:hover {
+        transform: scale(1.01);
+      }
+
+      .entry h2 {
+        margin-top: 0;
+        color: #34495e;
+        font-size: 1.25rem;
+      }
+
+      .entry p {
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .refresh-btn {
+        display: block;
+        margin: 0 auto 2rem auto;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .refresh-btn:hover {
+        background-color: #0056b3;
+      }
+
+      .timestamp {
+        text-align: center;
+        color: #888;
+        font-size: 0.9rem;
+        margin-top: -1rem;
+        margin-bottom: 2rem;
+      }
+      #container3d {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem auto;
+      }
+      #container3d canvas {
+        display: block;
+        margin: 0 auto;
+        width: 3vw;
+        height: 4vh;
+        top: 2px;
+        left: 0;
+      }
+
+      /* ...existing code... */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .grid-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        min-width: 0;
+        min-height: 0;
+        justify-content: center;
+      }
+
+      /* 3D container sizing */
+      #container3d {
+        background: #181828cc;
+        border-radius: 1.2rem;
+        box-shadow: 0 2px 16px 0 #00ffcc22;
+        padding: 2rem 2rem 2rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 320px;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      #container3d canvas { 
+     
+        width: 100% !important;
+        height: 300px !important;
+        max-width: 100%;
+        display: block;
+        border-radius: 1rem;
+      }
+
+      /* Responsive: 2 columns for tablets */
+      @media (max-width: 1000px) {
+        .grid-container {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .grid-item[style*="grid-column: span 2;"] {
+          grid-column: span 2;
+        }
+      }
+
+      /* Responsive: 1 column for mobile */
+      @media (max-width: 700px) {
+        .grid-container {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        .grid-item[style*="grid-column: span 2;"] {
+          grid-column: span 1;
+        }
+        #container3d {
+          min-height: 200px;
+          padding: 1rem;
+        }
+        #container3d canvas {
+          height: 150px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Quantum Research & Technology Innovations</h1>
+      <nav>
+        <a href="#quantum-computing">Quantum Computing</a>
+        <a href="#entanglement">Entanglement</a>
+        <a href="#supremacy">Supremacy</a>
+        <a href="#photonic-networks">Photonic Networks</a>
+        <a href="#applications">Applications</a>
+        <a href="#ai-query">AI Assistant</a>
+      </nav>
+    </header>
+    <main>
+      <div class="grid-container">
+        <div class="grid-item" id="container3d">
+          <!-- 3D visualization goes here -->
+        </div>
+        <div class="grid-item">
+          <section id="quantum-computing">
+            <h2>Quantum Computing</h2>
+            <p>
+              Quantum computing leverages the power of
+              <span class="highlight">quantum bits (qubits)</span>, which can
+              exist in superpositions of states, allowing them to solve problems
+              exponentially faster than classical computers. Companies like
+              <strong>IBM, Google, and IonQ</strong> are pushing the limits of
+              hardware scalability and quantum error correction.
+            </p>
+          </section>
+        </div>
+        <div class="grid-item">
+          <section id="entanglement">
+            <h2>Quantum Entanglement</h2>
+            <p>
+              Quantum entanglement enables particles to remain correlated over
+              vast distances. This foundational principle supports emerging
+              technologies like <strong>quantum teleportation</strong> and
+              <strong>quantum cryptography</strong>, forming the basis of future
+              secure communication networks.
+            </p>
+          </section>
+        </div>
+        <div class="grid-item">
+          <section id="supremacy">
+            <h2>Quantum Supremacy</h2>
+            <p>
+              In 2019, Google announced achieving
+              <span class="highlight">quantum supremacy</span>—performing a task
+              infeasible for classical systems. This milestone represents a
+              turning point in computational history and showcases quantum's
+              potential in complex simulations, optimization, and machine
+              learning.
+            </p>
+          </section>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-item">
+          <section id="photonic-networks">
+            <h2>Photonic Quantum Networks</h2>
+            <p>
+              Photonic quantum computing uses light particles for computation,
+              which travel faster and interact less with the environment,
+              promising scalable and robust quantum systems. Researchers at
+              <strong>Xanadu</strong> and academic labs are developing
+              <strong>boson sampling systems</strong> that push the boundaries
+              of photonic quantum hardware.
+            </p>
+          </section>
+        </div>
+        <div class="grid-item">
+          <section id="applications">
+            <h2>Applications of Quantum Research</h2>
+            <p>
+              Quantum technologies will revolutionize
+              <strong>drug discovery</strong>,
+              <strong>material science</strong>, <strong>finance</strong>, and
+              <strong>logistics</strong>. Hybrid quantum-classical models are
+              already helping tackle NP-hard problems and inspire new machine
+              learning architectures.
+            </p>
+          </section>
+        </div>
+      </div>
+
+      <section id="ai-query">
+        <h2>Ask the Quantum AI Assistant</h2>
+        <input
+          type="text"
+          id="promptInput"
+          placeholder="Ask about quantum tunneling..."
+        />
+        <button onclick="sendPrompt()">Ask</button>
+        <div id="aiResponse"></div>
+      </section>
+      <h1>Latest Quantum Research from arXiv</h1>
+      <div class="timestamp">Last updated: {{ last_updated }}</div>
+      <button class="refresh-btn" onclick="window.location.reload()">
+        🔄 Refresh
+      </button>
+
+      {% for entry in arxiv_entries %}
+      <div class="entry">
+        <h2>{{ entry.title }}</h2>
+        <p>{{ entry.summary }}</p>
+      </div>
+      {% endfor %}
+    </main>
+    <footer>&copy; 2025 Quantum Info. All rights reserved.</footer>
+    <script type="module" src="/static/main.js"></script>
+    <script>
+      // Scroll reveal effect with visible class
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+        const reveal = () => {
+          const scrollY = window.scrollY + window.innerHeight;
+          sections.forEach((sec) => {
+            if (scrollY > sec.offsetTop + 100) {
+              sec.classList.add("visible");
+            }
+          });
+        };
+        window.addEventListener("scroll", reveal);
+        reveal();
+      });
+
+      async function sendPrompt() {
+        const prompt = document.getElementById("promptInput").value;
+        const responseDiv = document.getElementById("aiResponse");
+        responseDiv.textContent = "Thinking...";
+
+        try {
+          const res = await fetch("/api/quantum", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ prompt }),
+          });
+
+          const data = await res.json();
+          responseDiv.textContent = data.response || data.error;
+        } catch (error) {
+          responseDiv.textContent = "Something went wrong.";
+        }
+      }
+    </script>
+  </body>
+</html>

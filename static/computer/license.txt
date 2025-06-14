@@ -1,0 +1,11 @@
+Model Information:
+* title:	UCS LEGO Superconducting Quantum Computer
+* source:	https://sketchfab.com/3d-models/ucs-lego-superconducting-quantum-computer-54b65e33a1d9446c8cf81c683acd8fc9
+* author:	trawling (https://sketchfab.com/trawling1)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "UCS LEGO Superconducting Quantum Computer" (https://sketchfab.com/3d-models/ucs-lego-superconducting-quantum-computer-54b65e33a1d9446c8cf81c683acd8fc9) by trawling (https://sketchfab.com/trawling1) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
