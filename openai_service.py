@@ -57,6 +57,5 @@ def get_quantum_insight(prompt: str) -> str:
     except Exception as e:
         return f"Error generating response: {e}"
     
-    
 
   

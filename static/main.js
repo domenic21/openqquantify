@@ -50,7 +50,7 @@ if (container) {
     console.error("Element with id 'container3d' not found in the DOM.");
 }
 //set camera position
-camera.position.z = objToRender === 'computer' ? 25 : 500;
+camera.position.z = objToRender === 'computer' ? 25 : 500; //
 
 //add lights 
 const toplight = new THREE.DirectionalLight(0xffffff, 1);

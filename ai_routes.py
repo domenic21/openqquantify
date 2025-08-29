@@ -3,7 +3,7 @@ from openai_service import get_quantum_insight
 from arxiv_fetcher import fetch_arxiv_data, cache_arxiv_data
 from datetime import datetime
 
-ai_routes = Blueprint('ai_routes', __name__) #clueprint is a way to organize your Flask application into modules, allowing you to group related routes and functionality together.
+ai_routes = Blueprint('ai_routes', __name__) #blueprint is a way to organize your Flask application into modules, allowing you to group related routes and functionality together.
 #post quantum insights using a POST request
 @ai_routes.route('/api/quantum', methods=['POST'])
 def generate_quantum_info():
