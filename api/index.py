@@ -4,9 +4,6 @@ import os
 from urllib.parse import urlparse, parse_qs
 import json
 
-# Add the parent directory to the path so we can import our modules
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from flask import Flask, render_template
 from ai_routes import ai_routes
 
